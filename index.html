@@ -1083,7 +1083,7 @@
       var total = isiKeranjang.reduce((sum, item) => sum + (item.harga * item.jumlah), 0);
       event.target.innerText = "⏳ Sedang Memproses..."; event.target.disabled = true;
 
-      fetch('https://script.google.com/macros/s/AKfycbwXcD-lUUrLwwPn9P3noNEhCwkezhAT0ajO7N7MYLMci0oIrfmUepOxc0kyrTeUkUHM/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyTsG17CQtT5FJmOAfILTTbDIz5jEueneVuQXDu3rOlb1rjuysHSHueqBXpPHcrDlaH/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1157,7 +1157,7 @@
       var btn = document.querySelector('.login-card .btn-login');
       if (u && p) {
         btn.innerText = "Memeriksa..."; btn.disabled = true;
-        fetch('https://script.google.com/macros/s/AKfycbwXcD-lUUrLwwPn9P3noNEhCwkezhAT0ajO7N7MYLMci0oIrfmUepOxc0kyrTeUkUHM/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbyTsG17CQtT5FJmOAfILTTbDIz5jEueneVuQXDu3rOlb1rjuysHSHueqBXpPHcrDlaH/exec', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ method: 'verifyLogin', username: u, password: p })
@@ -1246,7 +1246,7 @@
 
     function muatTabelAdmin() {
       document.getElementById('admin-table-body').innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 20px;">⏳ Memuat data produk...</td></tr>';
-      fetch('https://script.google.com/macros/s/AKfycbwXcD-lUUrLwwPn9P3noNEhCwkezhAT0ajO7N7MYLMci0oIrfmUepOxc0kyrTeUkUHM/exec?method=getProducts')
+      fetch('https://script.google.com/macros/s/AKfycbyTsG17CQtT5FJmOAfILTTbDIz5jEueneVuQXDu3rOlb1rjuysHSHueqBXpPHcrDlaH/exec?method=getProducts')
         .then(res => res.json())
         .then(res => {
           daftarProdukGlobal = res; var html = '';
@@ -1274,7 +1274,7 @@
       var d = { nama: document.getElementById('add-nama').value, harga: document.getElementById('add-harga').value, hargaDistributor: document.getElementById('add-harga-distributor').value, stok: document.getElementById('add-stok').value, gambar: document.getElementById('add-gambar').value, kategori: document.getElementById('add-kategori').value, deskripsi: document.getElementById('add-deskripsi').value };
       if (!d.nama || !d.harga || !d.stok) { showToast("Nama, Harga & Stok WAJIB diisi!", "error"); return; }
       event.target.innerText = "⏳ Menyimpan..."; event.target.disabled = true;
-      fetch('https://script.google.com/macros/s/AKfycbwXcD-lUUrLwwPn9P3noNEhCwkezhAT0ajO7N7MYLMci0oIrfmUepOxc0kyrTeUkUHM/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyTsG17CQtT5FJmOAfILTTbDIz5jEueneVuQXDu3rOlb1rjuysHSHueqBXpPHcrDlaH/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ method: 'simpanProdukBaru', ...d })
@@ -1308,7 +1308,7 @@
       var d = { id: document.getElementById('edit-id').value, nama: document.getElementById('edit-nama').value, harga: document.getElementById('edit-harga').value, hargaDistributor: document.getElementById('edit-harga-distributor').value, stok: document.getElementById('edit-stok').value, gambar: document.getElementById('edit-gambar').value, kategori: document.getElementById('edit-kategori').value, deskripsi: document.getElementById('edit-deskripsi').value };
       if (!d.nama || !d.harga || !d.stok) { showToast("Nama, Harga & Stok WAJIB diisi!", "error"); return; }
       event.target.innerText = "⏳ Mengupdate..."; event.target.disabled = true;
-      fetch('https://script.google.com/macros/s/AKfycbwXcD-lUUrLwwPn9P3noNEhCwkezhAT0ajO7N7MYLMci0oIrfmUepOxc0kyrTeUkUHM/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyTsG17CQtT5FJmOAfILTTbDIz5jEueneVuQXDu3rOlb1rjuysHSHueqBXpPHcrDlaH/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ method: 'updateProduk', ...d })
